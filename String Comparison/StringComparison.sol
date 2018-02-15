@@ -17,7 +17,7 @@ contract StringCompare {
         return true;
     }
 
-     function hashCompareWithLengthCheckInternal(string a, string b) internal returns(bool) {
+    function hashCompareWithLengthCheckInternal(string a, string b) internal returns(bool) {
         if(bytes(a).length != bytes(b).length) {
             return false;
         } else {
