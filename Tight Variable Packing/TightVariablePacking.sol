@@ -2,14 +2,14 @@ pragma solidity ^0.4.20;
 contract CheapStructPackingExample {
 
     struct CheapStruct {
-        uint64 a;
-        uint64 b;
-        uint32 c;
-        uint8 d;
-        bytes8 e;
-        bytes8 f;
-        bytes8 g;
-        bytes8 h;
+        uint8 a; //uses 1 byte writes in new slot
+        uint8 b; //uses 1 byte writes in previous slot
+        uint8 c; //uses 1 byte writes in previous slot
+        uint8 d; //uses 1 byte writes in previous slot
+        bytes1 e; //uses 1 byte writes in previous slot
+        bytes1 f; //uses 1 byte writes in previous slot
+        bytes1 g; //uses 1 byte writes in previous slot
+        bytes1 h; //uses 1 byte writes in previous slot
     }
 
     CheapStruct example;
@@ -23,14 +23,14 @@ contract CheapStructPackingExample {
 contract ExpensiveStructPackingExample {
 
     struct ExpensiveStruct {
-        uint64 a;
-        bytes32 e;
-        uint64 b;
-        bytes32 f;
-        uint32 c;
-        bytes32 g;
-        uint8 d;
-        bytes32 h;
+        uint64 a; //uses 8 bytes
+        bytes32 e; //uses 32 bytes writes in new slot
+        uint64 b; //uses 8 bytes writes in new slot
+        bytes32 f; //uses 32 bytes writes in new slot
+        uint32 c; //uses 4 bytes writes in new slot
+        bytes32 g; //uses 32 bytes writes in new slot
+        uint8 d; //uses 1 byte writes in new slot
+        bytes32 h; //uses 32 bytes writes in new slot
     }
 
     ExpensiveStruct example;
