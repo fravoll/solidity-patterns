@@ -14,7 +14,7 @@ contract MemoryArrayPackingCheap {
     mapping(address => uint) public ownerItemCount;
 
     function getItemsbyOwner(address _owner) view returns(uint[]) {
-        uint[] memory result = new uint[]((ownerItemCount[_owner]));
+        uint[] memory result = new uint[](ownerItemCount[_owner]);
 
         uint counter = 0;
         for (uint i = 0; i < items.length; i++) {
@@ -84,7 +84,7 @@ contract MemoryArrayPackingExpensive {
     mapping(address => uint) public ownerItemCount;
 
     function getItemsbyOwner(address _owner) returns(uint[]) {
-        uint[] memory result = new uint[]((ownerItemCount[_owner]));
+        uint[] memory result = new uint[](ownerItemCount[_owner]);
 
         uint counter = 0;
         for (uint i = 0; i < items.length; i++) {
