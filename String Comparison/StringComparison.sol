@@ -1,11 +1,11 @@
 pragma solidity ^0.4.19;
 contract StringCompare {
 
-    function hashCompareInternal(string a, string b) internal returns(bool) {
+    function hashCompareInternal(string a, string b) internal returns (bool) {
         return keccak256(a) == keccak256(b);
     }
 
-    function utilCompareInternal(string a, string b) internal returns(bool) {
+    function utilCompareInternal(string a, string b) internal returns (bool) {
         if(bytes(a).length != bytes(b).length) {
             return false;
         }
@@ -17,7 +17,7 @@ contract StringCompare {
         return true;
     }
 
-    function hashCompareWithLengthCheckInternal(string a, string b) internal returns(bool) {
+    function hashCompareWithLengthCheckInternal(string a, string b) internal returns (bool) {
         if(bytes(a).length != bytes(b).length) {
             return false;
         } else {
@@ -25,15 +25,15 @@ contract StringCompare {
         }
     }
 
-    function hashCompare(string a, string b) public returns(bool) {
+    function hashCompare(string a, string b) public returns (bool) {
         return hashCompareInternal(a, b);
     }
 
-    function utilCompare(string a, string b) public returns(bool) {
+    function utilCompare(string a, string b) public returns (bool) {
         return utilCompareInternal(a, b);
     }
 
-    function hashCompareWithLengthCheck(string a, string b) public returns(bool) {
+    function hashCompareWithLengthCheck(string a, string b) public returns (bool) {
         return hashCompareWithLengthCheckInternal(a, b);
     }
 
