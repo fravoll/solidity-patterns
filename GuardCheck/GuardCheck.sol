@@ -4,7 +4,7 @@ contract GuardCheck {
 
     function donate(address addr) payable public {
 
-        require(addr != 0);
+        require(addr != address(0));
         require(msg.value != 0);
         uint balanceBeforeTransfer = this.balance;
         uint transferAmount;
