@@ -14,7 +14,7 @@ contract CheapStructPackingExample {
 
     CheapStruct example;
 
-    function addCheapStruct() {
+    function addCheapStruct() public {
         CheapStruct memory someStruct = CheapStruct(1,2,3,4,"a","b","c","d");
         example = someStruct;
     }
@@ -35,7 +35,7 @@ contract ExpensiveStructPackingExample {
 
     ExpensiveStruct example;
 
-    function addExpensiveStruct() {
+    function addExpensiveStruct() public {
         ExpensiveStruct memory someStruct = ExpensiveStruct(1,"a",2,"b",3,"c",4,"d");
         example = someStruct;
     }
