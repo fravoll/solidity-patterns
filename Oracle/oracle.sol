@@ -5,7 +5,7 @@ contract OracleExample is usingOraclize {
 
     string public EURUSD;
 
-    function updatePrice() payable {
+    function updatePrice() public payable {
         if (oraclize_getPrice("URL") > this.balance) {
             //Handle out of funds error
         } else {
@@ -13,7 +13,7 @@ contract OracleExample is usingOraclize {
         }
     }
 
-    function __callback(bytes32 myid, string result) {
+    function __callback(bytes32 myid, string result) public {
         require(msg.sender != oraclize_cbAddress());
         EURUSD = result;
     }
