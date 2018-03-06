@@ -13,7 +13,7 @@ contract MemoryArrayPackingCheap {
 
     mapping(address => uint) public ownerItemCount;
 
-    function getItemsbyOwner(address _owner) view returns(uint[]) {
+    function getItemsbyOwner(address _owner) pubic view returns (uint[]) {
         uint[] memory result = new uint[](ownerItemCount[_owner]);
 
         uint counter = 0;
@@ -26,7 +26,7 @@ contract MemoryArrayPackingCheap {
         return result;
     }
 
-    function initialize() {
+    function initialize() public {
         Item memory tempItem = Item("test1", "house", 0xca35b7d915458ef540ade6068dfe2f44e8fa733c, 80331, 212);
         items.push(tempItem);
         ownerItemCount[0xca35b7d915458ef540ade6068dfe2f44e8fa733c]++;
@@ -83,7 +83,7 @@ contract MemoryArrayPackingExpensive {
 
     mapping(address => uint) public ownerItemCount;
 
-    function getItemsbyOwner(address _owner) returns(uint[]) {
+    function getItemsbyOwner(address _owner) public returns (uint[]) {
         uint[] memory result = new uint[](ownerItemCount[_owner]);
 
         uint counter = 0;
@@ -96,7 +96,7 @@ contract MemoryArrayPackingExpensive {
         return result;
     }
 
-    function initialize() {
+    function initialize() public {
         Item memory tempItem = Item("test1", "house", 0xca35b7d915458ef540ade6068dfe2f44e8fa733c, 80331, 212);
         items.push(tempItem);
         ownerItemCount[0xca35b7d915458ef540ade6068dfe2f44e8fa733c]++;
