@@ -1,7 +1,7 @@
 pragma solidity ^0.4.20;
 import "github.com/oraclize/ethereum-api/oraclizeAPI.sol";
 
-contract OracleExample is usingOraclize {
+contract Oracle is usingOraclize {
 
     string public EURUSD;
 
