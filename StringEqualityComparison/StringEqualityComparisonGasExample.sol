@@ -1,5 +1,5 @@
 pragma solidity ^0.4.19;
-contract StringCompare {
+contract StringEqualityComparisonGasExample {
 
     function hashCompareInternal(string a, string b) internal returns (bool) {
         return keccak256(a) == keccak256(b);
@@ -36,5 +36,4 @@ contract StringCompare {
     function hashCompareWithLengthCheck(string a, string b) public returns (bool) {
         return hashCompareWithLengthCheckInternal(a, b);
     }
-
 }
