@@ -1,5 +1,5 @@
 pragma solidity ^0.4.19;
-contract SeedRNG {
+contract Randomness {
 
     bytes32 encryptedSeed;
     bool seedSet = false;
