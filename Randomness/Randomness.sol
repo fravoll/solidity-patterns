@@ -1,17 +1,18 @@
-pragma solidity ^0.4.19;
+pragma solidity ^0.4.20;
+
 contract Randomness {
 
-    bytes32 encryptedSeed;
+    bytes32 sealedSeed;
     bool seedSet = false;
     bool betMade = false;
-    uint blockNumber;
+    uint storedBlockNumber;
     address trustedParty = 0xdCad3a6d3569DF655070DEd06cb7A1b2Ccd1D3AF;
 
-    function setEncryptedSeed(bytes32 _encryptedSeed) public {
+    function setSealedSeed(bytes32 _sealedSeed) public {
         require(!seedSet);
         require (msg.sender == trustedParty);
-        encryptedSeed = _encryptedSeed;
-        blockNumber = block.number;
+        sealedSeed = _sealedSeed;
+        storedBlockNumber = block.number;
         seedSet = true;
     }
 
@@ -24,8 +25,9 @@ contract Randomness {
     function reveal(bytes32 _seed) public {
         require(seedSet);
         require(betMade);
-        require(keccak256(msg.sender, _seed) == encryptedSeed);
-        uint random = uint(keccak256(_seed, block.blockhash(blockNumber)));
+        require(storedBlockNumber < block.number);
+        require(keccak256(msg.sender, _seed) == sealedSeed);
+        uint random = uint(keccak256(_seed, block.blockhash(storedBlockNumber)));
         // Insert logic for usage of random number here;
         seedSet = false;
         betMade = false;
