@@ -12,7 +12,7 @@ contract Randomness {
         require(!seedSet);
         require (msg.sender == trustedParty);
         sealedSeed = _sealedSeed;
-        storedBlockNumber = block.number;
+        storedBlockNumber = block.number + 1;
         seedSet = true;
     }
 
