@@ -6,10 +6,10 @@ contract StringEqualityComparisonGasExample {
     }
 
     function utilCompareInternal(string a, string b) internal returns (bool) {
-        if(bytes(a).length != bytes(b).length) {
+        if (bytes(a).length != bytes(b).length) {
             return false;
         }
-        for(uint i = 0; i < bytes(a).length; i ++) {
+        for (uint i = 0; i < bytes(a).length; i ++) {
             if(bytes(a)[i] != bytes(b)[i]) {
                 return false;
             }
@@ -18,7 +18,7 @@ contract StringEqualityComparisonGasExample {
     }
 
     function hashCompareWithLengthCheckInternal(string a, string b) internal returns (bool) {
-        if(bytes(a).length != bytes(b).length) {
+        if (bytes(a).length != bytes(b).length) {
             return false;
         } else {
             return keccak256(a) == keccak256(b);
