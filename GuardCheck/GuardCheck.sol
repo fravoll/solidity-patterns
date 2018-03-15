@@ -9,9 +9,9 @@ contract GuardCheck {
         uint balanceBeforeTransfer = this.balance;
         uint transferAmount;
 
-        if(addr.balance == 0) {
+        if (addr.balance == 0) {
             transferAmount = msg.value;
-        } else if(addr.balance < msg.sender.balance) {
+        } else if (addr.balance < msg.sender.balance) {
             transferAmount = msg.value / 2;
         } else {
             revert();
