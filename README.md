@@ -4,6 +4,7 @@ A compilation of patterns and best practices for the smart contract programming 
 The patterns already uploaded and assigned to their respective categories are (with more to come):
 * Security Patterns
   * Access Restriction
+  * Checks Effects Interactions
 * Behavioral Patterns
   * Oracle
   * Guard Check
