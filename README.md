@@ -6,6 +6,7 @@ The patterns already uploaded and assigned to their respective categories are (w
   * Access Restriction
   * Checks Effects Interactions
   * Secure Ether Transfer
+  * Emergency Stop
 * Behavioral Patterns
   * Oracle
   * Guard Check
