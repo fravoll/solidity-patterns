@@ -3,7 +3,6 @@ pragma solidity ^0.4.20;
 contract GuardCheck {
 
     function donate(address addr) payable public {
-
         require(addr != address(0));
         require(msg.value != 0);
         uint balanceBeforeTransfer = this.balance;
@@ -19,6 +18,5 @@ contract GuardCheck {
 
         addr.transfer(transferAmount);
         assert(this.balance == balanceBeforeTransfer - transferAmount);
-
     }
 }

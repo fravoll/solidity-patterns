@@ -9,7 +9,6 @@ contract ChecksEffectsInteractions {
     }
 
     function withdraw(uint amount) public {
-
         require(balances[msg.sender] >= amount);
 
         balances[msg.sender] -= amount;
