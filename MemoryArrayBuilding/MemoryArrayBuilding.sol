@@ -15,7 +15,6 @@ contract MemoryArrayBuilding {
     mapping(address => uint) public ownerItemCount;
 
     function getItemIDsByOwner(address _owner) public view returns (uint[]) {
-
         uint[] memory result = new uint[](ownerItemCount[_owner]);
         uint counter = 0;
 
