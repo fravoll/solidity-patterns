@@ -7,6 +7,7 @@ The patterns already uploaded and assigned to their respective categories are (w
   * Checks Effects Interactions
   * Secure Ether Transfer
   * Emergency Stop
+  * Pull over Push
 * Behavioral Patterns
   * Oracle
   * Guard Check
