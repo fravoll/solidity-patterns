@@ -13,6 +13,8 @@ The patterns already uploaded and assigned to their respective categories are (w
   * Guard Check
   * State Machine
   * Randomness
+* Upgradeability Patterns
+  * Proxy Delegate
 * Economic Patterns
   * String Equality Comparison
   * Tight Variable Packing
