@@ -15,6 +15,7 @@ The patterns already uploaded and assigned to their respective categories are (w
   * Randomness
 * Upgradeability Patterns
   * Proxy Delegate
+  * Eternal Storage
 * Economic Patterns
   * String Equality Comparison
   * Tight Variable Packing
