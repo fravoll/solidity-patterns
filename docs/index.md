@@ -5,27 +5,24 @@ Each pattern exists of a code sample and a detailed explanation, including backg
 
 ## Contents
 
-### Behavioral Patterns
-* [Guard Check](./guard_check.md)
-* [State Machine](./tbd.md)
-* [Oracle](./tbd.md)
-* [Randomness](./tbd.md)
-
-### Security Patterns
-* [Access Restriction](./tbd.md)
-* [Checks Effects Interactions](./tbd.md)
-* [Secure Ether Transfer](./tbd.md)
-* [Pull over Push](./tbd.md)
-* [Emergency Stop](./tbd.md)
-
-### Upgradeability Patterns
-* [Proxy Delegate](./tbd.md)
-* [Eternal Storage](./tbd.md)
-
-### Economic Patterns
-* [String Equality Comparison](./tbd.md)
-* [Tight Variable Packing](./tbd.md)
-* [Memory Array Building](./tbd.md)
+* **Behavioral Patterns**
+  * [Guard Check](./guard_check.md)
+  * [State Machine](./tbd.md)
+  * [Oracle](./tbd.md)
+  * [Randomness](./tbd.md)
+* **Security Patterns**
+  * [Access Restriction](./tbd.md)
+  * [Checks Effects Interactions](./tbd.md)
+  * [Secure Ether Transfer](./tbd.md)
+  * [Pull over Push](./tbd.md)
+  * [Emergency Stop](./tbd.md)
+* **Upgradeability Patterns**
+  * [Proxy Delegate](./tbd.md)
+  * [Eternal Storage](./tbd.md)
+* **Economic Patterns**
+  * [String Equality Comparison](./tbd.md)
+  * [Tight Variable Packing](./tbd.md)
+  * [Memory Array Building](./tbd.md)
 
 ## Help me evaluate!
 
