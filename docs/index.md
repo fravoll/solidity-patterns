@@ -1,7 +1,7 @@
 # Solidity Patterns
 
 This document contains a collection of design and programming patterns for the smart contract programming language Solidity.
-Each pattern exists of a code sample and a detailed explanation, including background, implications and additional information about the patterns. 
+Each pattern consists of a code sample and a detailed explanation, including background, implications and additional information about the patterns.
 
 ## Contents
 
@@ -26,7 +26,7 @@ Each pattern exists of a code sample and a detailed explanation, including backg
 
 ## Help me evaluate!
 
-To help me evaluate the patterns, feel free to open issues or pull requests to point out/or fix any improvements or any errors I may have overlooked.
+Right now, the patterns are in the evaluation stage. To help me evaluate the patterns, feel free to open issues or pull requests, to point out possible improvements or fix any errors I may have overlooked.
 
 ## Disclaimer
 
