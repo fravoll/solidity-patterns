@@ -28,6 +28,10 @@ Each pattern consists of a code sample and a detailed explanation, including bac
 
 Right now, the patterns are in the evaluation stage. To help me evaluate the patterns, feel free to open issues or pull requests, to point out possible improvements or fix any errors I may have overlooked.
 
+## Bibliography
+
+The sources used in this document can be found in this [bibliography](./bibliography.md).
+
 ## Disclaimer
 
 All patterns in this document are still in development and should only be used under own responsibility. There is no liability for any damages caused by the use of one of these patterns.
