@@ -6,7 +6,7 @@ Each pattern exists of a code sample and a detailed explanation, including backg
 ## Contents
 
 ### Behavioral Patterns
-* [Guard Check](./tbd.md)
+* [Guard Check](./guard_check.md)
 * [State Machine](./tbd.md)
 * [Oracle](./tbd.md)
 * [Randomness](./tbd.md)
