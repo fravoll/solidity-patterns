@@ -32,7 +32,7 @@ Generally 'require()' should be used towards the beginning of a function for val
 
 ## Sample Code
 This fictional sample contract is a donation distributor. Users send the address of a charity they want to support and a donation int the form of ether. In case the charity has no ether on their address, the whole amount is forwarded. If they do already own some ether but less than the donor, half the amount of the donation is transferred while the other half stays at the contract for future distribution. In case the charity has more funds than the donor, no money should be donated. This sample contract showcases all three possibilities to implement the Check Guard pattern. 
-```Solidity
+```sol
 contract GuardCheck {
     
     function donate(address addr) payable public {
