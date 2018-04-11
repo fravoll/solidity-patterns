@@ -32,7 +32,7 @@ Generally 'require()' should be used towards the beginning of a function for val
 
 ## Sample Code
 This fictional sample contract is a donation distributor. Users send the address of a charity they want to support and a donation int the form of ether. In case the charity has no ether on their address, the whole amount is forwarded. If they do already own some ether but less than the donor, half the amount of the donation is transferred while the other half stays at the contract for future distribution. In case the charity has more funds than the donor, no money should be donated. This sample contract showcases all three possibilities to implement the Check Guard pattern. 
-```sol
+```Solidity
 contract GuardCheck {
     
     function donate(address addr) payable public {
@@ -71,3 +71,4 @@ The application of this pattern can be observed in nearly every published contra
 
 A negative example can be observed in this simple [casino contract](https://github.com/merlox/casino-ethereum/blob/master/contracts/Casino.sol). The developer used `assert` for every check in the whole contract. This would lead to the loss of all provided gas if one of the checks fails. In case a user wants to make sure his transaction does not run out of gas and therefore provides a very high gas limit, this could result in the loss of a significant amount of money.
 
+[**< Back**](https://fravoll.github.io/solidity-patterns/)
