@@ -108,3 +108,5 @@ Some consequences that should be kept in mind, emerge from the different options
 ## Known Uses
 
 Several contracts applying this pattern in some form or another could be observed. One example is the betting contract from [Ethorse](https://github.com/ethorse/ethorse-core/blob/master/contracts/Betting.sol), which allows bets on the price development of cryptocurrencies. In this example, the stages are stored in a struct in the form of booleans, with the current stage being set to `true`. Transitions are made in a timely fashion via timestamps. A different implementation that relies mostly on manual transitions is the auction contract of [Pocketinns](https://github.com/pocketinns/PocketinnsContracts/blob/master/DutchAuction.sol), a community driven marketplace ecosystem. In this contract the owner has the ability to change stages at his own will. Even though it is described as an emergency measure in the contract, it opens the door for severe manipulation and any transaction with such a contract should be done with care. 
+
+[**< Back**](https://fravoll.github.io/solidity-patterns/)
