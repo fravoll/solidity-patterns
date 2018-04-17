@@ -46,6 +46,8 @@ In case the random number is supposed to be of a special interval, the modulo fu
 
 The provided sample showcases the implementation of a pseudorandom number generator with the use of a trusted entity in the context of a betting contract. Any logic regarding the betting process is omitted for the sake of clarity. 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract Randomness {
 
     bytes32 sealedSeed;
