@@ -29,6 +29,8 @@ The structure of these modifiers usually follows the same pattern: In the beginn
 
 The following code features three different kinds of access restrictions in an example contract owned by an owner and is influenced by the [example from the Solidity documentation](http://solidity.readthedocs.io/en/v0.4.21/common-patterns.html#restricting-access). Ownership can either be transferred by the current owner himself or be bought by anybody for 1 ether, after a month has passed since the last change in ownership.  
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 pragma solidity ^0.4.21;
 
 contract AccessRestriction {
