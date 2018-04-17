@@ -36,6 +36,8 @@ The concrete implementation of this pattern is highly dependent on the context o
 The following code shows the basic framework of the Emergency Stop pattern and provides two exemplary methods that are influenced by a stop. For the sake of clarity, any further contract logic is omitted.  
 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract EmergencyStop {
 
     bool isStopped = false;
