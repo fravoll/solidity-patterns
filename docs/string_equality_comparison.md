@@ -32,6 +32,8 @@ The implementation of this pattern can be grouped into two parts:
 ## Sample Code
 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 function hashCompareWithLengthCheck(string a, string b) internal returns (bool) {
     if(bytes(a).length != bytes(b).length) {
         return false;
