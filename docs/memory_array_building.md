@@ -31,6 +31,8 @@ The implementation of this pattern can be divided into two parts. Part one cover
 
 In this sample we show how a collection of items can be aggregated over its owners.
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract MemoryArrayBuilding {
 
     struct Item {
