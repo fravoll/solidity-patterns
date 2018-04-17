@@ -32,6 +32,8 @@ The hashing of the storage key should take place at the calling contract in orde
 The following sample code showcases a possible implementation of the Eternal Storage pattern and is inspired by [this post](https://medium.com/rocket-pool/upgradable-solidity-contract-design-54789205276d). For the sake of space, this implementation only features the two data types `uint` and `address`. The remaining data types are implemented accordingly. The full implementation with a total of six data types can be found in the [GitHub repository](https://github.com/fravoll/solidity-patterns/blob/master/EternalStorage/EternalStorage.sol).
 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract EternalStorage {
 
     address owner = msg.sender;
