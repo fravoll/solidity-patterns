@@ -1,3 +1,6 @@
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
+
 pragma solidity ^0.4.21;
 
 contract AccessRestriction {
