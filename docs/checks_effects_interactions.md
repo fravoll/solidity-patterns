@@ -27,6 +27,8 @@ This method of ordering function components was first described and named in the
 ## Sample Code
 The following sample code implements a simple banking contract, where users can deposit and withdraw Ether.
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract ChecksEffectsInteractions {
 
     mapping(address => uint) balances;
