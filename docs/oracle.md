@@ -38,6 +38,8 @@ Whether or not the oracle is self implemented or an external service is used, it
 As the service Oraclize is used in almost every case an oracle is needed, the following sample will showcase the code needed to interact with the Oraclize oracle to receive the current EUR to USD exchange rate. Other oracles are integrated in a similar fashion. Information about the accurate syntax needed can be found in the respective documentation.
 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 import "github.com/oraclize/ethereum-api/oraclizeAPI.sol";
 
 contract OracleExample is usingOraclize {
