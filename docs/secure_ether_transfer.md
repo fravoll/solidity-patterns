@@ -40,6 +40,8 @@ There are also similarities between the three functions: All three of them are s
 The following fictitious sample showcases two contracts: the first contract receives ether, while the second one uses the three presented methods to send ether to the first one and shows different ways to handle exception propagation at the same time.
 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract EtherReceiver {
 
     function () public payable {}
