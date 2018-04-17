@@ -31,6 +31,8 @@ It is possible to store as many variables into one storage slot, as long as the 
 
 As an example we show how to use the pattern in the context of a struct.
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract StructPackingExample {
     
     struct CheapStruct {
