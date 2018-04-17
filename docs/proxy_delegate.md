@@ -38,6 +38,8 @@ The delegate can be implemented in the same way as any regular contract and no s
 This generic example of a Proxy contract is inspired by [this post](https://medium.com/@daonomic/upgradeable-ethereum-smart-contracts-d036cb373d6) and stores the current version of the delegate in its own storage. Because the design of the Delegate contract can take many forms, there is no explicit example given. 
 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract Proxy {
 
     address delegate;
