@@ -35,6 +35,8 @@ Since [Solidity version 0.4.22](https://solidity.readthedocs.io/en/v0.4.22/units
 ## Sample Code
 This fictional sample contract is a donation distributor. Users send the address of a charity they want to support and a donation int the form of ether. In case the charity has no ether on their address, the whole amount is forwarded. If they do already own some ether but less than the donor, half the amount of the donation is transferred while the other half stays at the contract for future distribution. In case the charity has more funds than the donor, no money should be donated. This sample contract showcases all three possibilities to implement the Check Guard pattern. 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract GuardCheck {
     
     function donate(address addr) payable public {
