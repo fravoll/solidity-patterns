@@ -8,6 +8,7 @@ Shift the risk associated with transferring ether to the user.
 Sending ether to another address in Ethereum involves a call to the receiving entity. There are several reasons why this external call could fail. If the receiving address is a contract, it could have a fallback function implemented that simply throws an exception, once it gets called. Another reason for failure is running out of gas. This can happen in cases where a lot of external calls have to be made within one single function call, for example when sending the profits of a bet to multiple winners. Because of these reasons developers should follow a simple principle: never trust external calls to execute without throwing an error. Most of the times this is not an issue, because it could be argued that it is the responsibility of the receiver to make sure that he is able to receive his money, and in case he does not, it is only to his disadvantage. The following example code of an auction contract inspired by [this example](https://consensys.github.io/smart-contract-best-practices/known_attacks/#dos-with-unexpected-revert), illustrates how even a single receiver could potentially freeze a whole contract.
 
 ```Solidity
+// THis code contains deliberate errors. Do not use.
 contract BadAuction {
 
     address highestBidder;
@@ -53,6 +54,8 @@ Implemented this way, a thrown exception in one of the transfers would only effe
 An exemplary implementation of the Pull over Push pattern can be seen in the following code, which contains only the necessary components.  
 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract PullOverPush {
 
     mapping(address => uint) credits;
