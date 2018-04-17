@@ -38,6 +38,8 @@ After the implementation is done, heavy testing is necessary to rule out any pos
 This sample contract showcases the state machine for a blind auction and is inspired by the example code provided in the [Solidity documentation](http://solidity.readthedocs.io/en/v0.4.21/common-patterns.html#state-machine). It features stage transitions in functions, as well as timed transitions. As this is an extensive use case, only the code relevant for the state machine is presented. Any logic dealing with the auction, including the storage of bids, is omitted.
 
 ```Solidity
+// This code has not been professionally audited, therefore I cannot make any promises about
+// safety or correctness. Use at own risk.
 contract StateMachine {
     
     enum Stages {
