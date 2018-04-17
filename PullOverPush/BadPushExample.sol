@@ -1,3 +1,5 @@
+// This code contains deliberate errors. Do not use.
+
 pragma solidity ^0.4.21;
 
 contract BadAuction {
