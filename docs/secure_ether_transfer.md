@@ -58,7 +58,7 @@ contract EtherSender {
     }
 
     function callValueEther(uint _amount) public payable {
-        require(address(receiverAdr).call.value(_amount).gas(21000)());
+        require(address(receiverAdr).call.value(_amount).gas(35000)());
     }
 
     function transferEther(uint _amount) public payable {
@@ -71,7 +71,7 @@ The only job of the first contract `EtherReceiver` is to receive ether. Therefor
 
 Each of the three following functions uses one of the three different methods to transfer ether from a contract and carries the `payable` modifier, in order to provide for the ether to be sent in the process. Additionally, each of them takes an amount in wei to be transferred to the receiver as an input parameter. The amount provided with the transaction should be at least the amount to be transferred to the receiving contract. The `sendEther` function from line 10 uses the `send` function of the address type. As  exceptions for possible errors (e.g. the balance of the contract is lower than the amount to be transferred) are not propagated, we are able to handle the return value, for example in an if-clause.
 
-The second function `callValueEther` from line 16, is encapsulated in a `require` statement to show how exception propagation can be implemented, even for methods not supporting it innately. In this example we specified that 21000 gas should be forwarded to the fallback function of the receiving contract by appending `.gas(21000)` to the method. This can be useful in case the fallback function has some advanced logic implemented.
+The second function `callValueEther` from line 16, is encapsulated in a `require` statement to show how exception propagation can be implemented, even for methods not supporting it innately. In this example we specified that the arbitrary amount of 35000 gas should be forwarded to the fallback function of the receiving contract by appending `.gas(35000)` to the method. This can be useful in case the fallback function has some advanced logic implemented.
 
 The `transferEther` function in line 20 has a straight forward implementation and does not need any further statements, as exceptions are automatically propagated.
 
