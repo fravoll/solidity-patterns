@@ -18,12 +18,12 @@ Each pattern consists of a code sample and a detailed explanation, including bac
   * [**Pull over Push**](./pull_over_push.md): Shift the risk associated with transferring ether to the user.
   * [**Emergency Stop**](./emergency_stop.md): Add an option to disable critical contract functionality in case of an emergency.
 * **Upgradeability Patterns**
-  * [**Proxy Delegate**](.proxy_delegate.md): Introduce the possibility to upgrade smart contracts without breaking any dependencies.
-  * [**Eternal Storage**](.eternal_storage.md): Keep contract storage after a smart contract upgrade.
+  * [**Proxy Delegate**](./proxy_delegate.md): Introduce the possibility to upgrade smart contracts without breaking any dependencies.
+  * [**Eternal Storage**](./eternal_storage.md): Keep contract storage after a smart contract upgrade.
 * **Economic Patterns**
-  * [**String Equality Comparison**](.string_equality_comparison.md): Check for the equality of two provided strings in a way that minimizes average gas consumption for a large number of different inputs.
-  * [**Tight Variable Packing**](.tight_variable_packing.md): Optimize gas consumption when storing or loading statically-sized variables.
-  * [**Memory Array Building**](.memory_array_building.md): Aggregate and retrieve data from contract storage in a gas efficient way.
+  * [**String Equality Comparison**](./string_equality_comparison.md): Check for the equality of two provided strings in a way that minimizes average gas consumption for a large number of different inputs.
+  * [**Tight Variable Packing**](./tight_variable_packing.md): Optimize gas consumption when storing or loading statically-sized variables.
+  * [**Memory Array Building**](./memory_array_building.md): Aggregate and retrieve data from contract storage in a gas efficient way.
 
 ## Help me evaluate!
 
