@@ -1,6 +1,6 @@
 # Solidity Patterns
 
-This document contains a collection of design and programming patterns for the smart contract programming language Solidity.
+This document contains a collection of design and programming patterns for the smart contract programming language Solidity in version 0.4.20. Note that newer versions might have changed some of the functionalities.
 Each pattern consists of a code sample and a detailed explanation, including background, implications and additional information about the patterns.
 
 ## Contents
@@ -24,10 +24,6 @@ Each pattern consists of a code sample and a detailed explanation, including bac
   * [**String Equality Comparison**](./string_equality_comparison.md): Check for the equality of two provided strings in a way that minimizes average gas consumption for a large number of different inputs.
   * [**Tight Variable Packing**](./tight_variable_packing.md): Optimize gas consumption when storing or loading statically-sized variables.
   * [**Memory Array Building**](./memory_array_building.md): Aggregate and retrieve data from contract storage in a gas efficient way.
-
-## Help me evaluate!
-
-Right now, the patterns are in the evaluation stage. To help me evaluate the patterns, feel free to open issues or pull requests, to point out possible improvements or fix any errors I may have overlooked.
 
 ## Bibliography
 
