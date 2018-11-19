@@ -56,7 +56,7 @@ To account for different usage environments, a set of different input pairs has 
 
 The results of the evaluation are shown in the following table:
 
-| Input A                    | Input B                    | Hash  | Character + Lenght | Hash + Length |
+| Input A                    | Input B                    | Hash  | Character + Length | Hash + Length |
 | :-------------             |:-------------              | -----:| ------------------:|--------------:|
 | abcdefghijklmnopqrstuvwxyz | abcdefghijklmnopqrstuvwxyz | 1225  | 7062               | 1261
 | abcdefghijklmnopqrstuvwxy**X** | abcdefghijklmnopqrstuvwxyz      |   1225 | 7012 | 1261
