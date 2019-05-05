@@ -2,7 +2,7 @@
 // safety or correctness. Use at own risk.
 
 pragma solidity ^0.4.20;
-import "github.com/oraclize/ethereum-api/oraclizeAPI.sol";
+import "github.com/oraclize/ethereum-api/oraclizeAPI_0.4.sol";
 
 contract Oracle is usingOraclize {
 
@@ -12,7 +12,7 @@ contract Oracle is usingOraclize {
         if (oraclize_getPrice("URL") > this.balance) {
             //Handle out of funds error
         } else {
-            oraclize_query("URL", "json(http://api.fixer.io/latest?symbols=USD).rates.USD");
+            oraclize_query("URL", "json(https://api.exchangeratesapi.io/latest?symbols=USD).rates.USD");
         }
     }
 
