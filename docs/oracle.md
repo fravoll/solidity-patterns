@@ -15,7 +15,7 @@ Use the Oracle pattern when
 * you rely on information that can not be provided from within the blockchain.
 * you trust the provider of the necessary information. 
 
-## Participants \& Collaborations
+## Participants & Collaborations
 
 The oracle pattern consists of three entities: the contract requesting information, the oracle and the data source. The process begins with a contract requesting information, which he cannot retrieve from within the blockchain. Therefore a transaction is sent to the oracle contract, which lives on the blockchain as well. This transaction contains a request that the contract wishes to be fulfilled. Optional parameters can be the desired data source, or a certain time in the future, at which the answer should be delivered.
 
