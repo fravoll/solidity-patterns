@@ -29,4 +29,4 @@ Have a look at the documentation site: https://fravoll.github.io/solidity-patter
 
 ## Disclaimer
 
-All patterns in this document are still in development and should only be used under own responsibility. There is no liability for any damages caused by the use of one of these patterns.
+This repository is not under active development anymore and some (if not most) sections might be outdated. There is no liability for any damages caused by the use of one of these patterns.
