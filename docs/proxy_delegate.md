@@ -74,6 +74,6 @@ There are several implications that should be considered when using the Proxy De
 Besides these negative consequences, the Proxy Delegate pattern is an efficient way to separate the upgrading mechanism from contract design. It allows for upgradeability, without breaking any dependencies.    
 
 ## Known Uses
-Implementations of the Proxy Delegate pattern are more likely to be found in bigger DApps, containing a large number of contracts. One example for this is [Augur](https://github.com/AugurProject/augur-core/blob/master/source/contracts/libraries/Delegator.sol), a prediction market that lets users bet on the outcome of future events. Another example is the [EtherRouter contract of Colony](https://github.com/JoinColony/colonyNetwork/blob/develop/contracts/EtherRouter.sol), which is a platform for creating decentralized organizations. In both cases, Augur and Colony, the address of the upgradeable contract is not stored in the proxy itself, but in some kind of address resolver.          
+Implementations of the Proxy Delegate pattern are more likely to be found in bigger DApps, containing a large number of contracts. One example for this is [Augur](https://github.com/AugurProject/augur-core/blob/master/source/contracts/libraries/Delegator.sol), a prediction market that lets users bet on the outcome of future events. In this case the address of the upgradeable contract is not stored in the proxy itself, but in some kind of address resolver.          
      
 [**< Back**](https://fravoll.github.io/solidity-patterns/)
