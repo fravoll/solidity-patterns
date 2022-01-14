@@ -82,7 +82,7 @@ Several consequences have to be taken into account when applying the Access Rest
 The advantages of the pattern are drawn from the fact that it is easy to adapt to different situations and highly reusable, while still providing a secure way to limit the access to functionality and therefore increase smart contract security altogether.
  
 ## Known Uses
-The most prominent example of this pattern is probably the [Ownable contract by OpenZeppelin](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/ownership/Ownable.sol).
+The most prominent example of this pattern is probably the [Ownable contract by OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol).
 
 Another example is the [core contract of the CrytoKitties DApp](https://etherscan.io/address/0x06012c8cf97bead5deae237070f9587f8e7a266d\#code), where there is not only one owner, but three. Namely the CEO, CFO and COO, who have different security levels and therefore different functions they are allowed to access.   
 
