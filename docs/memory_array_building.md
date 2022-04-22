@@ -79,7 +79,7 @@ The most obvious consequence of applying the Memory Array Building pattern is th
 But the pattern does not only come with benefits. By implementing it, we increase complexity. It is unintuitive to store all items in one array compared to having separate arrays. Also the concept of doing aggregation on every single call instead of aggregating once and storing it that way might be confusing in the beginning.
 
 ## Known Uses
-An inplementation of this pattern can be found in the infamous [CryptoKitties contract](https://etherscan.io/address/0x06012c8cf97bead5deae237070f9587f8e7a266d\#code). In line 651 we find a function called `\lstinline|tokensOfOwner(address _owner)` which returns the IDs of all Kitties that belong to a given address.
+An implementation of this pattern can be found in the infamous [CryptoKitties contract](https://etherscan.io/address/0x06012c8cf97bead5deae237070f9587f8e7a266d\#code). In line 651 we find a function called `\lstinline|tokensOfOwner(address _owner)` which returns the IDs of all Kitties that belong to a given address.
 
 Another example is the now closed, Ethereum based slot machine [Slotthereum](https://etherscan.io/address/0xda8fe472e1beae12973fa48e9a1d9595f752fce0\#code). In this contract, the pattern was used in a similar fashion as in our example, to retrieve the IDs of all games. 
 
