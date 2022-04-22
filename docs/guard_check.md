@@ -28,7 +28,7 @@ Before the Byzantium update, `require()` and `assert()` behaved identically. Sin
 
 The [Solidity documentation](http://solidity.readthedocs.io/en/v0.4.21/#) suggests that `require()` "should be used to ensure valid conditions, such as inputs, or contract state variables [..], or to validate return values from calls to external contracts" and `assert()` "should only be used to test for internal errors, and to check invariants". Both methods evaluate the parameters passed to it as a boolean and throw an exception if it evaluates to `false`. The `revert()` throws in every case. It is therefore useful in complex situations, like if-else trees, where the evaluation of the condition can not be conducted in one line of code and the use of 'require()' would not be fitting.
 
-Generally 'require()' should be used towards the beginning of a function for validation and should be used more often than the other two.  The 'assert()' method will be used at the end of a function and should only prevent severe errors. Under normal circumstances and bug free code the 'assert()' statement should never evaluate to 'true'.
+Generally 'require()' should be used towards the beginning of a function for validation and should be used more often than the other two.  The 'assert()' method will be used at the end of a function and should only prevent severe errors. Under normal circumstances and bug free code the 'assert()' statement should never evaluate to 'false'.
 
 Since [Solidity version 0.4.22](https://solidity.readthedocs.io/en/v0.4.22/units-and-global-variables.html#error-handling) it is possible to append an error message to `require(bool condition, string message)` and `revert(string message)`.
 
