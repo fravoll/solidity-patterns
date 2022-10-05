@@ -6,32 +6,37 @@ pragma solidity ^0.4.21;
 contract AccessRestriction {
 
     address public owner = msg.sender;
-    uint public lastOwnerChange = now;
+    uint public creationTime = block.timestamp;
 
     modifier onlyBy(address _account) {
-        require(msg.sender == _account);
+        require(msg.sender == _account,   // when we give comma here means check below if this fails.
+        'Sender not authorized!'
+        );
         _;
     }
 
     modifier onlyAfter(uint _time) {
-        require(now >= _time);
+
+        require(block.timestamp >= _time,
+        'FUnction is called too early!');
         _;
+
     }
 
-    modifier costs(uint _amount) {
-        require(msg.value >= _amount);
-        _;
-        if (msg.value > _amount) {
-            msg.sender.transfer(msg.value - _amount);
-        }
+    function changeOenerAddress(address _newAddress) onlyBy(owner) public {
+        owner = _newAddress;
     }
 
-    function changeOwner(address _newOwner) public onlyBy(owner) {
-        owner = _newOwner;
+    // function that can disown the current owner.
+
+    function disOwn(address _new) public {
+        require(msg.sender == _new);
+        owner != msg.sender;
     }
 
-    function buyContract() public payable onlyAfter(lastOwnerChange + 4 weeks) costs(1 ether) {
-        owner = msg.sender;
-        lastOwnerChange = now;
+    function disOwn() onlyBy(owner) onlyAfter(creationTime + 4 weeks) public {
+        delete owner;
     }
+
 }
+
