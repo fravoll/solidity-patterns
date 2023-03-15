@@ -112,7 +112,7 @@ be mitigated by a proper rule set for version changes, or decentralized ownershi
 
 ## Known Uses
 
-The Eternal Storage pattern is used in the upgradeability strategy of [Rocket Pool](https://github.com/rocket-pool/rocketpool/blob/master/contracts/RocketStorage.sol), a decentralized proof of stake pool. They try to overcome the issue of trust loss by 
-disabling the direct access of the owner to the contract, after he has initialized it.  
+The Eternal Storage pattern is used in the upgradeability strategy of [Rocket Pool](https://github.com/rocket-pool/rocketpool/blob/master/contracts/contract/RocketStorage.sol), a decentralized proof of stake pool. They try to overcome the issue of trust loss by
+disabling the direct access of the owner to the contract, after he has initialized it.
 
 [**< Back**](https://fravoll.github.io/solidity-patterns/)
