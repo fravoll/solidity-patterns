@@ -2,7 +2,7 @@
 
 ## Intent
 
-Shift the risk associated with transferring ether to the user. 
+Shift the risk associated with transferring ether to the user.
 
 ## Motivation
 Sending ether to another address in Ethereum involves a call to the receiving entity. There are several reasons why this external call could fail. If the receiving address is a contract, it could have a fallback function implemented that simply throws an exception, once it gets called. Another reason for failure is running out of gas. This can happen in cases where a lot of external calls have to be made within one single function call, for example when sending the profits of a bet to multiple winners. Because of these reasons developers should follow a simple principle: never trust external calls to execute without throwing an error. Most of the times this is not an issue, because it could be argued that it is the responsibility of the receiver to make sure that he is able to receive his money, and in case he does not, it is only to his disadvantage. The following example code of an auction contract inspired by [this example](https://consensys.github.io/smart-contract-best-practices/known_attacks/#dos-with-unexpected-revert), illustrates how even a single receiver could potentially freeze a whole contract.
@@ -51,7 +51,7 @@ In order to isolate all external calls from each other and the contract logic, t
 Implemented this way, a thrown exception in one of the transfers would only effect this specific transfer and not a whole series of transfers or even the whole contract, like in the example from above.
 
 ## Sample Code
-An exemplary implementation of the Pull over Push pattern can be seen in the following code, which contains only the necessary components.  
+An exemplary implementation of the Pull over Push pattern can be seen in the following code, which contains only the necessary components.
 
 ```Solidity
 // This code has not been professionally audited, therefore I cannot make any promises about
@@ -79,7 +79,7 @@ contract PullOverPush {
 
 The `credits` mapping in line 3 is one of the key elements of this pattern and stores the amount of ether (in wei) that each address is allowed to withdraw. The permission for withdrawal happens in the `allowForPull(..)` function in line 5. This function should be used instead of every ether transfer that is supposed to be settled with a pull instead of a push payment. So instead of `<address>.transfer(amount)`, we would now use `allowForPull(<address>, amount)`. The function carries the `private` modifier and can therefore only be called from within the contract. In case the pull permissions should be given directly from the outside via a transaction, the function can be made `public`. The [Access Restriction pattern](./access_restriction.md) should be used in that case, to make sure that only authorized addresses can issue withdrawal credits.
 
-To request a withdrawal the eligible users have to call the `withdrawCredits()` function from line 9. Line 10 stores the amount the caller is allowed to withdraw in memory. Afterwards, line 12 makes sure that the requesting user has been credited an amount to withdraw higher than zero (Since an unsigned integer can not be negative, it is sufficient to check that the amount is not equal zero.). Line 13 requires the contract balance to be high enough to cover the requested amount. An exception would be thrown at the actual transfer later on anyways, if this condition was violated, so this check is not absolutely necessary. However, it is good practice to fail as early as possible. Line 15 sets the allowed withdraw amount in the mapping to zero, before actually transferring it, in order to be conform with the Checks Effects Interactions pattern and avoid re-entrancy. At last, the amount is transferred to the recipient in line 17 via a push. 
+To request a withdrawal the eligible users have to call the `withdrawCredits()` function from line 9. Line 10 stores the amount the caller is allowed to withdraw in memory. Afterwards, line 12 makes sure that the requesting user has been credited an amount to withdraw higher than zero (Since an unsigned integer can not be negative, it is sufficient to check that the amount is not equal zero.). Line 13 requires the contract balance to be high enough to cover the requested amount. An exception would be thrown at the actual transfer later on anyways, if this condition was violated, so this check is not absolutely necessary. However, it is good practice to fail as early as possible. Line 15 sets the allowed withdraw amount in the mapping to zero, before actually transferring it, in order to be conform with the Checks Effects Interactions pattern and avoid re-entrancy. At last, the amount is transferred to the recipient in line 17 via a push.
 
 ## Consequences
 
@@ -90,8 +90,8 @@ However, the negative consequences, coming with the additional steps required, s
 Using this pattern can be considered a trade-off between security and convenience for the users. Before implementing it, one should evaluate if the cutback in user experience is manageable, or if a clever use of the [Secure Ether Transfer pattern](./secure_ether_transfer.md) might be sufficient to rule out any vulnerabilities.
 
 ## Known Uses
-One popular example of using the Pull over Push pattern is the [PullPayment contract](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/contracts/payment/PullPayment.sol) by OpenZeppelin. The contract implements the pattern in a general way and contracts wanting to use its functionality can inherit from it.
+One popular example of using the Pull over Push pattern is the [PullPayment contract](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/PullPayment.sol) by OpenZeppelin. The contract implements the pattern in a general way and contracts wanting to use its functionality can inherit from it.
 
-A more specialized implementation can be found in a contract called [BlockParty](https://github.com/makoto/blockparty/blob/master/contracts/Conference.sol), a contract to manage attendance deposits for free events. Users are only getting their deposit back if they showed up at the event they registered for. Attendants are able to request a withdrawal after the contract owner, in most cases the organizer of the event, has confirmed their attendance via a transaction containing their Ethereum address.      
- 
+A more specialized implementation can be found in a contract called [BlockParty](https://github.com/makoto/blockparty/blob/master/contracts/Conference.sol), a contract to manage attendance deposits for free events. Users are only getting their deposit back if they showed up at the event they registered for. Attendants are able to request a withdrawal after the contract owner, in most cases the organizer of the event, has confirmed their attendance via a transaction containing their Ethereum address.
+
 [**< Back**](https://fravoll.github.io/solidity-patterns/)
