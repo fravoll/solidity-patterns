@@ -16,7 +16,7 @@ contract Oracle is usingOraclize {
         }
     }
 
-    function __callback(bytes32 myid, string result) public {
+    function __callback(bytes32 myid, string memory result) public {
         require(msg.sender == oraclize_cbAddress());
         EURUSD = result;
     }
